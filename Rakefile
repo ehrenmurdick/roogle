@@ -5,12 +5,17 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "roogle"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Google stuff on the command line}
+    gem.description = %Q{Google stuff on the command line}
     gem.email = "ehren.murdick@gmail.com"
     gem.homepage = "http://github.com/ehrenmurdick/roogle"
     gem.authors = ["Ehren Murdick"]
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.add_development_dependency "mechanize", ">= 1.0.0"
+    gem.add_development_dependency "term-ansicolor", ">= 1.0.5"
+    gem.add_development_dependency "launchy", ">= 0.3.5"
+
+    gem.executable << 'roogle'
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

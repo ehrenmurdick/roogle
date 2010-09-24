@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'mechanize'
+require 'term/ansicolor'
+require 'launchy'
+
+Roogle.new.do_search(ARGV.join(' '))
