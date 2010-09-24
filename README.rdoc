@@ -1,6 +1,11 @@
 = roogle
 
-Description goes here.
+usage:
+
+roogle foo bar
+
+
+I've aliased this to g 'cause I'm lazy. You might do that too. I don't know because I don't know you, so the name is long.
 
 == Note on Patches/Pull Requests
  
