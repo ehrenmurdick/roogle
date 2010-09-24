@@ -15,7 +15,7 @@ begin
     gem.add_development_dependency "term-ansicolor", ">= 1.0.5"
     gem.add_development_dependency "launchy", ">= 0.3.5"
 
-    gem.executable << 'roogle'
+    gem.executables << 'roogle'
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

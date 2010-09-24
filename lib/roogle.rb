@@ -9,6 +9,7 @@ class Roogle
   end
 
   def do_search(query)
+    search_result = nil
     @mech.get(THE_GOOGLE) do |page|
       search_result = page.form_with(:name => 'f') do |search|
         search.q = ARGV.join(' ')
@@ -16,8 +17,8 @@ class Roogle
     end
 
     search_result.parser.css("h3.r a").each do |link|
-      links << link
-      print red, "%2s " % [links.size], reset
+      @results << link
+      print red, "%2s " % [@results.size], reset
       print yellow, link.text[0..60].ljust(62), reset
       print " ", link.attr("href").split("/")[2]
 
@@ -28,6 +29,6 @@ class Roogle
 
     n = STDIN.gets.chomp.to_i
 
-    ::Launchy.open(links[n - 1].attr('href')) unless n < 1
+    ::Launchy.open(@results[n - 1].attr('href')) unless n < 1
   end
 end
