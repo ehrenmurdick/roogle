@@ -11,9 +11,10 @@ begin
     gem.homepage = "http://github.com/ehrenmurdick/roogle"
     gem.authors = ["Ehren Murdick"]
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
-    gem.add_development_dependency "mechanize", ">= 1.0.0"
-    gem.add_development_dependency "term-ansicolor", ">= 1.0.5"
-    gem.add_development_dependency "launchy", ">= 0.3.5"
+
+    gem.add_dependency "mechanize", ">= 1.0.0"
+    gem.add_dependency "term-ansicolor", ">= 1.0.5"
+    gem.add_dependency "launchy", ">= 0.3.7"
 
     gem.executables << 'roogle'
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
