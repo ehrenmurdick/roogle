@@ -10,7 +10,8 @@ begin
     gem.email = "ehren.murdick@gmail.com"
     gem.homepage = "http://github.com/ehrenmurdick/roogle"
     gem.authors = ["Ehren Murdick"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.add_development_dependency "rspec", ">= 1.3.0"
+    gem.add_development_dependency "fakeweb", ">= 1.2.8"
 
     gem.add_dependency "mechanize", ">= 1.0.0"
     gem.add_dependency "term-ansicolor", ">= 1.0.5"
@@ -44,9 +45,22 @@ rescue LoadError
   end
 end
 
-task :test => :check_dependencies
+require 'spec/rake/spectask'
+Spec::Rake::SpecTask.new(:spec) do |spec|
+  spec.libs << 'lib' << 'spec'
+  spec.spec_files = FileList['spec/**/*_spec.rb']
+end
 
-task :default => :test
+Spec::Rake::SpecTask.new(:rcov) do |spec|
+  spec.libs << 'lib' << 'spec'
+  spec.pattern = 'spec/**/*_spec.rb'
+  spec.rcov = true
+end
+
+task :spec => :check_dependencies
+
+task :default => :spec
+
 
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
