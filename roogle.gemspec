@@ -26,7 +26,12 @@ Gem::Specification.new do |s|
      "VERSION",
      "bin/roogle",
      "lib/roogle.rb",
-     "roogle.gemspec"
+     "roogle.gemspec",
+     "spec/fixtures/foobar.html",
+     "spec/fixtures/google.html",
+     "spec/roogle_spec.rb",
+     "spec/spec.opts",
+     "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/ehrenmurdick/roogle}
   s.rdoc_options = ["--charset=UTF-8"]
